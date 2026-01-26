@@ -69,7 +69,7 @@ const Footer = () => {
                 <div className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 text-gold mt-0.5" />
                   <span className="text-primary-foreground/70 text-sm">
-                    
+                    Dreamglobe immigration, Lalwani Icon 3rd floor, Viman nagar, Pune - 411014
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
