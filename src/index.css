@@ -37,12 +37,12 @@
     --radius: 0.5rem;
 
     /* Custom Dreamglobe tokens */
-    --navy: 177 70% 35%;
-    --navy-dark: 177 75% 25%;
-    --navy-light: 177 50% 45%;
-    --gold: 180 60% 70%;
-    --gold-light: 180 50% 80%;
-    --gold-dark: 180 70% 55%;
+    --navy: 180 35% 30%;
+    --navy-dark: 180 40% 22%;
+    --navy-light: 180 30% 40%;
+    --gold: 180 40% 60%;
+    --gold-light: 180 35% 75%;
+    --gold-dark: 180 45% 50%;
     --cream: 45 30% 97%;
     --slate: 220 9% 46%;
 
