@@ -69,16 +69,16 @@ const Footer = () => {
                 <div className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 text-gold mt-0.5" />
                   <span className="text-primary-foreground/70 text-sm">
-                    123 Immigration Tower, Business District, City 10001
+                    
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-gold" />
-                  <span className="text-primary-foreground/70 text-sm">+1 (234) 567-890</span>
+                  <span className="text-primary-foreground/70 text-sm" > <a href="tel:+91 9112220244">+91 9112220244</a></span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-gold" />
-                  <span className="text-primary-foreground/70 text-sm">info@dreamglobe.com</span>
+                  <span className="text-primary-foreground/70 text-sm">info@dreamglobe.co.in</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock className="h-5 w-5 text-gold" />
