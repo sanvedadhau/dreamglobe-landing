@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Globe, Phone, ChevronDown } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,11 +35,8 @@ const Header = () => {
       <div className="container-custom px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <Globe className="h-8 w-8 text-gold transition-transform duration-300 group-hover:rotate-12" />
-            <span className="font-serif text-2xl font-bold text-primary-foreground">
-              Dream<span className="text-gold">Globe</span>
-            </span>
+          <a href="#" className="flex items-center">
+            <img src={logo} alt="DreamGlobe - Where Your Dreams Meet the World" className="h-10 md:h-12" />
           </a>
 
           {/* Desktop Navigation */}
