@@ -11,7 +11,7 @@ const FounderSection = () => {
             <div className="relative z-10">
               <img
                 src={founderImage}
-                alt="Rajesh Sharma - Founder of DreamGlobe"
+                alt="Manisha - Founder of DreamGlobe"
                 className="w-full max-w-md mx-auto rounded-lg shadow-2xl"
               />
             </div>
