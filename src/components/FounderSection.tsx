@@ -26,27 +26,25 @@ const FounderSection = () => {
               Meet Our Founder
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mt-3 mb-6">
-              Rajesh Sharma
+              Manisha
             </h2>
             <p className="text-gold font-medium text-lg mb-6">
-              Founder & Managing Director
+              Founder 
             </p>
             <div className="divider-gold mb-6" />
 
             <div className="relative mb-8">
               <Quote className="absolute -top-4 -left-4 h-12 w-12 text-gold/20" />
               <p className="text-muted-foreground text-lg leading-relaxed italic pl-8">
-                "Every immigration journey is unique, and so should be the approach. At DreamGlobe,
+                "Every immigration journey is unique, and so should be the approach. At Dreamglobe,
                 we don't just process visas—we build pathways to new beginnings. Our commitment is
                 to make the dream of global mobility accessible to everyone who dares to dream."
               </p>
             </div>
 
             <p className="text-muted-foreground leading-relaxed mb-6">
-              With over 20 years of experience in immigration consultancy, Rajesh founded DreamGlobe
-              with a vision to transform how immigration services are delivered. A licensed ICCRC
-              member and former immigration officer, he brings unparalleled expertise and a deep
-              understanding of immigration systems worldwide.
+              With over 20 years of experience in immigration consultancy, Manisha founded Dreamglobe
+              with a vision to transform how immigration services are delivered."We don't just process applications; we nurture dreams and build bridges to new beginnings."
             </p>
 
             <div className="flex items-center gap-4">
