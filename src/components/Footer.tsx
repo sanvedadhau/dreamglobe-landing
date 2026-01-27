@@ -1,32 +1,32 @@
 import { Globe, MapPin, Phone, Mail, Clock, Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const services = [
-    'Student Visa',
-    'Work Visa',
-    'Permanent Residence',
-    'Tourist Visa',
-    'Business Immigration',
-    'Document Services',
+    { name: 'Student Visa', href: '/services/student-visa' },
+    { name: 'Work Visa', href: '/services/work-visa' },
+    { name: 'Permanent Residence', href: '/services/permanent-residence' },
+    { name: 'Tourist Visa', href: '/services/tourist-visa' },
+    { name: 'Business Immigration', href: '/services/business-immigration' },
+    { name: 'Document Services', href: '/services/document-services' },
   ];
 
   const destinations = [
-    'Canada',
-    'Australia',
-    'Germany',
-    'United Kingdom',
-    'New Zealand',
-    'United States',
+    { name: 'Canada', href: '/destinations/canada' },
+    { name: 'Australia', href: '/destinations/australia' },
+    { name: 'Germany', href: '/destinations/germany' },
+    { name: 'United Kingdom', href: '/destinations/united-kingdom' },
+    { name: 'New Zealand', href: '/destinations/new-zealand' },
+    { name: 'United States', href: '/destinations/united-states' },
   ];
 
   const quickLinks = [
-    'About Us',
-    'Our Team',
-    'Testimonials',
-    'Blog',
-    'FAQ',
-    'Contact',
+    { name: 'About Us', href: '/#about' },
+    { name: 'Explore Programs', href: '/explore-programs' },
+    { name: 'Blog', href: '/blogs' },
+    { name: 'FAQ', href: '/#faq' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -55,12 +55,12 @@ const Footer = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Company Info */}
             <div className="col-span-2 md:col-span-3 lg:col-span-2">
-              <a href="#" className="flex items-center gap-2 mb-6">
+              <Link to="/" className="flex items-center gap-2 mb-6">
                 <Globe className="h-8 w-8 text-gold" />
                 <span className="font-serif text-2xl font-bold text-primary-foreground">
                   Dream<span className="text-gold">Globe</span>
                 </span>
-              </a>
+              </Link>
               <p className="text-primary-foreground/70 mb-6 max-w-sm">
                 Your trusted partner in global immigration. We transform dreams into reality with
                 expert guidance and personalized solutions.
@@ -95,13 +95,13 @@ const Footer = () => {
               </h4>
               <ul className="space-y-3">
                 {services.map((service) => (
-                  <li key={service}>
-                    <a
-                      href="#"
+                  <li key={service.name}>
+                    <Link
+                      to={service.href}
                       className="text-primary-foreground/70 hover:text-gold transition-colors text-sm"
                     >
-                      {service}
-                    </a>
+                      {service.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -114,13 +114,13 @@ const Footer = () => {
               </h4>
               <ul className="space-y-3">
                 {destinations.map((destination) => (
-                  <li key={destination}>
-                    <a
-                      href="#"
+                  <li key={destination.name}>
+                    <Link
+                      to={destination.href}
                       className="text-primary-foreground/70 hover:text-gold transition-colors text-sm"
                     >
-                      {destination}
-                    </a>
+                      {destination.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -133,13 +133,13 @@ const Footer = () => {
               </h4>
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
+                  <li key={link.name}>
+                    <Link
+                      to={link.href}
                       className="text-primary-foreground/70 hover:text-gold transition-colors text-sm"
                     >
-                      {link}
-                    </a>
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -167,12 +167,12 @@ const Footer = () => {
               ))}
             </div>
             <div className="flex items-center gap-6 text-sm">
-              <a href="#" className="text-primary-foreground/50 hover:text-gold transition-colors">
+              <Link to="/privacy-policy" className="text-primary-foreground/50 hover:text-gold transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-primary-foreground/50 hover:text-gold transition-colors">
+              </Link>
+              <Link to="/terms-of-service" className="text-primary-foreground/50 hover:text-gold transition-colors">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>
