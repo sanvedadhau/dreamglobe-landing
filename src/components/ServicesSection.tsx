@@ -1,10 +1,12 @@
 import { GraduationCap, Briefcase, Plane, Building, Users, FileCheck, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
     icon: GraduationCap,
     title: 'Student Visa',
+    href: '/services/student-visa',
     description:
       'Complete guidance for international education including university selection, admission, and student visa processing.',
     features: ['University Counseling', 'SOP & Documentation', 'Visa Interview Prep'],
@@ -12,6 +14,7 @@ const services = [
   {
     icon: Briefcase,
     title: 'Work Visa',
+    href: '/services/work-visa',
     description:
       'Navigate work permit applications for various countries with expert assistance at every step.',
     features: ['Job Search Support', 'Permit Processing', 'Employer Liaison'],
@@ -19,6 +22,7 @@ const services = [
   {
     icon: Users,
     title: 'Permanent Residence',
+    href: '/services/permanent-residence',
     description:
       'Comprehensive PR visa services for Canada, Australia, New Zealand, and other immigration-friendly nations.',
     features: ['Points Assessment', 'Express Entry', 'Family Sponsorship'],
@@ -26,6 +30,7 @@ const services = [
   {
     icon: Plane,
     title: 'Tourist Visa',
+    href: '/services/tourist-visa',
     description:
       'Hassle-free tourist and visitor visa applications for business trips, holidays, or family visits.',
     features: ['Quick Processing', 'Document Checklist', 'Interview Training'],
@@ -33,6 +38,7 @@ const services = [
   {
     icon: Building,
     title: 'Business Immigration',
+    href: '/services/business-immigration',
     description:
       'Start-up visas, investor programs, and business immigration pathways for entrepreneurs.',
     features: ['Investment Options', 'Business Plans', 'Compliance Support'],
@@ -40,6 +46,7 @@ const services = [
   {
     icon: FileCheck,
     title: 'Document Services',
+    href: '/services/document-services',
     description:
       'Attestation, translation, and verification services for all your immigration documents.',
     features: ['Apostille Services', 'Document Translation', 'Background Checks'],
@@ -68,9 +75,10 @@ const ServicesSection = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <Link
               key={index}
-              className="card-professional p-8 hover-lift group cursor-pointer"
+              to={service.href}
+              className="card-professional p-8 hover-lift group cursor-pointer block"
             >
               <div className="w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-300">
                 <service.icon className="h-7 w-7 text-gold group-hover:text-navy-dark transition-colors duration-300" />
@@ -92,23 +100,22 @@ const ServicesSection = () => {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#"
-                className="inline-flex items-center text-gold font-semibold text-sm group-hover:text-navy-dark transition-colors"
-              >
+              <span className="inline-flex items-center text-gold font-semibold text-sm group-hover:text-navy-dark transition-colors">
                 Learn More
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>
+              </span>
+            </Link>
           ))}
         </div>
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button variant="gold" size="lg">
-            View All Services
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/explore-programs">
+            <Button variant="gold" size="lg">
+              View All Services
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

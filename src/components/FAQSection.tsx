@@ -62,7 +62,7 @@ const FAQSection = () => {
                 Book a free consultation with our experts and get personalized answers.
               </p>
               <a
-                href="#contact"
+                href="mailto:info@dreamglobe.co.in?subject=Inquiry%20about%20Immigration%20Services&body=Hello%20DreamGlobe%20Team%2C%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20immigration%20services.%20Please%20get%20in%20touch%20with%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you."
                 className="inline-flex items-center text-gold font-semibold hover:underline"
               >
                 Contact Us Today →
