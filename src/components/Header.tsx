@@ -60,26 +60,28 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="DreamGlobe - Where Your Dreams Meet the World" className="h-10 md:h-12 rounded-lg" />
+            <img src={logo} alt="DreamGlobe - Where Your Dreams Meet the World" className="h-9 md:h-11 rounded-lg" />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-5">
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
                 {item.dropdown ? (
                   <button
                     className="flex items-center gap-1 text-navy hover:text-gold-dark transition-colors duration-200 text-sm font-medium py-2"
+                    style={{ fontFamily: "'Comfortaa', sans-serif" }}
                     onMouseEnter={() => setOpenDropdown(item.name)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
                     {item.name}
-                    <ChevronDown className="h-4 w-4" />
+                    <ChevronDown className="h-3.5 w-3.5" />
                   </button>
                 ) : (
                   <Link
                     to={item.href}
                     className="text-navy hover:text-gold-dark transition-colors duration-200 text-sm font-medium py-2"
+                    style={{ fontFamily: "'Comfortaa', sans-serif" }}
                   >
                     {item.name}
                   </Link>

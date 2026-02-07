@@ -60,7 +60,7 @@ const HeroCarousel = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Slides */}
+      {/* Slides - only background images and overlay cycle */}
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -78,54 +78,47 @@ const HeroCarousel = () => {
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/90 via-navy-dark/70 to-navy-dark/40" />
+        </div>
+      ))}
 
-          {/* Content */}
-          <div className="relative h-full flex items-center">
-            <div className="container-custom px-4 sm:px-6 lg:px-8">
-              <div className="max-w-2xl">
-                <span
-                  className={`inline-block text-gold font-semibold tracking-wider uppercase text-sm mb-4 ${
-                    index === currentSlide ? 'animate-fade-in-up' : ''
-                  }`}
-                  style={{ animationDelay: '0.2s' }}
-                >
-                  {slide.subtitle}
-                </span>
-                <h1
-                  className={`font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 ${
-                    index === currentSlide ? 'animate-fade-in-up' : ''
-                  }`}
-                  style={{ animationDelay: '0.4s' }}
-                >
-                  {slide.title}
-                </h1>
-                <p
-                  className={`text-primary-foreground/80 text-lg sm:text-xl mb-8 max-w-xl ${
-                    index === currentSlide ? 'animate-fade-in-up' : ''
-                  }`}
-                  style={{ animationDelay: '0.6s' }}
-                >
-                  {slide.description}
-                </p>
-                <div
-                  className={`flex flex-wrap gap-4 ${
-                    index === currentSlide ? 'animate-fade-in-up' : ''
-                  }`}
-                  style={{ animationDelay: '0.8s' }}
-                >
-                  <Button variant="hero" size="xl">
-                    {slide.cta}
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button variant="heroOutline" size="xl">
-                    Watch Our Story
-                  </Button>
-                </div>
-              </div>
+      {/* Content - stays stationary, only text content changes */}
+      <div className="relative z-10 h-full flex items-center">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <span
+              key={`subtitle-${currentSlide}`}
+              className="inline-block text-gold font-semibold tracking-wider uppercase text-sm mb-4 animate-fade-in-up"
+              style={{ animationDelay: '0.2s' }}
+            >
+              {slides[currentSlide].subtitle}
+            </span>
+            <h1
+              key={`title-${currentSlide}`}
+              className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up"
+              style={{ animationDelay: '0.4s' }}
+            >
+              {slides[currentSlide].title}
+            </h1>
+            <p
+              key={`desc-${currentSlide}`}
+              className="text-primary-foreground/80 text-lg sm:text-xl mb-8 max-w-xl animate-fade-in-up"
+              style={{ animationDelay: '0.6s' }}
+            >
+              {slides[currentSlide].description}
+            </p>
+            {/* Buttons stay completely stationary */}
+            <div className="flex flex-wrap gap-4">
+              <Button variant="hero" size="xl">
+                Free Consultation
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button variant="heroOutline" size="xl">
+                Watch Our Story
+              </Button>
             </div>
           </div>
         </div>
-      ))}
+      </div>
 
       {/* Navigation Arrows */}
       <button
@@ -161,24 +154,19 @@ const HeroCarousel = () => {
 
       {/* Stats Bar */}
       <div className="absolute bottom-0 left-0 right-0 z-20 bg-navy-dark/80 backdrop-blur-md border-t border-gold/20">
-        <div className="container-custom px-4 sm:px-6 lg:px-8 py-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl lg:text-4xl font-serif font-bold text-gold">15+</div>
-              <div className="text-primary-foreground/70 text-sm mt-1">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl lg:text-4xl font-serif font-bold text-gold">10,000+</div>
-              <div className="text-primary-foreground/70 text-sm mt-1">Successful Visas</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl lg:text-4xl font-serif font-bold text-gold">98%</div>
-              <div className="text-primary-foreground/70 text-sm mt-1">Success Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl lg:text-4xl font-serif font-bold text-gold">50+</div>
-              <div className="text-primary-foreground/70 text-sm mt-1">Countries Covered</div>
-            </div>
+        <div className="container-custom px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="flex items-center justify-between md:justify-around gap-4 sm:gap-6">
+            {[
+              { value: '15+', label: 'Years Experience' },
+              { value: '10,000+', label: 'Successful Visas' },
+              { value: '98%', label: 'Success Rate' },
+              { value: '50+', label: 'Countries Covered' },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center flex-1">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gold" style={{ fontFamily: "'Comfortaa', sans-serif" }}>{stat.value}</div>
+                <div className="text-primary-foreground/70 text-xs sm:text-sm mt-1">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
