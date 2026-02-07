@@ -66,23 +66,34 @@ const Footer = () => {
                 expert guidance and personalized solutions.
               </p>
               <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-gold mt-0.5" />
-                  <span className="text-primary-foreground/70 text-sm">
-                    Dreamglobe immigration, Lalwani Icon 3rd floor, Viman nagar, 
+                <a
+                  href="https://maps.google.com/?q=Dreamglobe+immigration+Lalwani+Icon+3rd+floor+Viman+nagar+Pune+411014"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 hover:text-gold transition-colors group"
+                >
+                  <MapPin className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
+                  <span className="text-primary-foreground/70 text-sm group-hover:text-gold transition-colors">
+                    Dreamglobe Immigration, Lalwani Icon 3rd floor, Viman Nagar, 
                     Pune - 411014
                   </span>
-                </div>
+                </a>
+                <a
+                  href="tel:+919112220244"
+                  className="flex items-center gap-3 hover:text-gold transition-colors group"
+                >
+                  <Phone className="h-5 w-5 text-gold flex-shrink-0" />
+                  <span className="text-primary-foreground/70 text-sm group-hover:text-gold transition-colors">+91 9112220244</span>
+                </a>
+                <a
+                  href="mailto:info@dreamglobe.co.in?subject=Inquiry%20about%20Immigration%20Services&body=Hello%20DreamGlobe%20Team%2C%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20immigration%20services.%20Please%20get%20in%20touch%20with%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you."
+                  className="flex items-center gap-3 hover:text-gold transition-colors group"
+                >
+                  <Mail className="h-5 w-5 text-gold flex-shrink-0" />
+                  <span className="text-primary-foreground/70 text-sm group-hover:text-gold transition-colors">info@dreamglobe.co.in</span>
+                </a>
                 <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-gold" />
-                  <span className="text-primary-foreground/70 text-sm" > <a href="tel:+91 9112220244">+91 9112220244</a></span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-gold" />
-                  <span className="text-primary-foreground/70 text-sm">info@dreamglobe.co.in</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Clock className="h-5 w-5 text-gold" />
+                  <Clock className="h-5 w-5 text-gold flex-shrink-0" />
                   <span className="text-primary-foreground/70 text-sm">Mon - Sat: 9AM - 7PM</span>
                 </div>
               </div>
