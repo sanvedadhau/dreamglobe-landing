@@ -133,7 +133,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-md border-t border-gray-200 animate-fade-in-up max-h-[80vh] overflow-y-auto">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-border animate-fade-in-up max-h-[80vh] overflow-y-auto">
             <nav className="flex flex-col p-6 gap-2">
               {navItems.map((item) => (
                 <div key={item.name}>
