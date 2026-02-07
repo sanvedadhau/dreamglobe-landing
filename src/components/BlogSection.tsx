@@ -1,5 +1,6 @@
-import { ArrowRight, Calendar, Clock, User } from 'lucide-react';
+import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const blogPosts = [
   {
@@ -48,48 +49,53 @@ const BlogSection = () => {
               Immigration Insights & News
             </h2>
           </div>
-          <Button variant="navy">
-            View All Articles
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <Link to="/blogs">
+            <Button variant="navy">
+              View All Articles
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
 
         {/* Blog Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
-            <article
+            <Link
               key={post.id}
-              className="card-professional overflow-hidden hover-lift group cursor-pointer"
+              to="/blogs"
+              className="block"
             >
-              {/* Category Badge */}
-              <div className="p-6 pb-0">
-                <span className="inline-block px-3 py-1 bg-gold/10 text-gold text-xs font-semibold rounded-full">
-                  {post.category}
-                </span>
-              </div>
+              <article className="card-professional overflow-hidden hover-lift group cursor-pointer h-full">
+                {/* Category Badge */}
+                <div className="p-6 pb-0">
+                  <span className="inline-block px-3 py-1 bg-gold/10 text-gold text-xs font-semibold rounded-full">
+                    {post.category}
+                  </span>
+                </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="font-serif text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="font-serif text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
 
-                {/* Meta */}
-                <div className="flex items-center gap-4 text-sm text-muted-foreground border-t border-border pt-4">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4" />
-                    {post.date}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="h-4 w-4" />
-                    {post.readTime}
+                  {/* Meta */}
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground border-t border-border pt-4">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="h-4 w-4" />
+                      {post.date}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Clock className="h-4 w-4" />
+                      {post.readTime}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </Link>
           ))}
         </div>
       </div>
