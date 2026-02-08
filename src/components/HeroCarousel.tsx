@@ -108,7 +108,7 @@ const HeroCarousel = () => {
             </p>
             {/* Buttons stay completely stationary */}
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:info@dreamglobe.co.in?subject=Free%20Consultation%20Request&body=Hello%20DreamGlobe%20Team%2C%0A%0AI%20would%20like%20to%20book%20a%20free%20consultation%20regarding%20immigration%20services.%20Please%20get%20in%20touch%20with%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you.">
+              <a href="https://wa.me/919112220244?text=Hello%20DreamGlobe%20Team%2C%0A%0AI%20would%20like%20to%20book%20a%20free%20consultation%20call%20regarding%20immigration%20services.%20Please%20get%20in%20touch%20with%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you." target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="xl">
                   Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
