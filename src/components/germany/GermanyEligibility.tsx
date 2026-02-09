@@ -23,8 +23,21 @@ const GermanyEligibility = () => {
   const [hoveredCost, setHoveredCost] = useState<number | null>(null);
 
   return (
-    <section className="section-padding bg-navy">
-      <div className="container-custom">
+    <section className="section-padding bg-navy relative overflow-hidden">
+      {/* German flag overlay - large vertical stripes faded */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute left-0 top-0 bottom-0 w-1/3 bg-black/[0.05]" />
+        <div className="absolute left-1/3 top-0 bottom-0 w-1/3 bg-[#DD0000]/[0.04]" />
+        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-[#FFCC00]/[0.04]" />
+      </div>
+      {/* Bottom flag stripe */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 flex pointer-events-none" aria-hidden="true">
+        <div className="flex-1 bg-black/30" />
+        <div className="flex-1 bg-[#DD0000]/40" />
+        <div className="flex-1 bg-[#FFCC00]/50" />
+      </div>
+
+      <div className="container-custom relative">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div>
             <div className="inline-flex items-center gap-2 mb-6">
@@ -70,7 +83,13 @@ const GermanyEligibility = () => {
               ))}
             </div>
           </div>
-          <div className="card-professional p-8 bg-white/5 border-[#FFCC00]/20">
+          <div className="card-professional p-8 bg-white/5 border-[#FFCC00]/20 relative overflow-hidden">
+            {/* Card flag top */}
+            <div className="absolute top-0 left-0 right-0 h-1 flex pointer-events-none">
+              <div className="flex-1 bg-black/30" />
+              <div className="flex-1 bg-[#DD0000]/40" />
+              <div className="flex-1 bg-[#FFCC00]/50" />
+            </div>
             <h3 className="font-serif text-2xl font-bold text-primary-foreground mb-6">Cost Breakdown</h3>
             <div className="space-y-1">
               {costs.map((cost, idx) => (
@@ -92,7 +111,6 @@ const GermanyEligibility = () => {
                 </div>
               ))}
             </div>
-            {/* Total estimate */}
             <div className="mt-6 pt-4 border-t border-[#FFCC00]/20">
               <div className="flex justify-between items-center">
                 <span className="text-primary-foreground font-bold">Total First Year Estimate</span>

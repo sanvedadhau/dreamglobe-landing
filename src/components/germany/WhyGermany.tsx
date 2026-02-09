@@ -14,8 +14,15 @@ const WhyGermany = () => {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
 
   return (
-    <section className="section-padding">
-      <div className="container-custom">
+    <section className="section-padding relative overflow-hidden">
+      {/* German flag vertical accent on right */}
+      <div className="absolute right-0 top-0 bottom-0 w-1.5 flex flex-col pointer-events-none" aria-hidden="true">
+        <div className="flex-1 bg-black/10" />
+        <div className="flex-1 bg-[#DD0000]/15" />
+        <div className="flex-1 bg-[#FFCC00]/20" />
+      </div>
+
+      <div className="container-custom relative">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="flex gap-0.5">
@@ -35,12 +42,18 @@ const WhyGermany = () => {
           {whyGermany.map((item, idx) => (
             <div
               key={idx}
-              className={`card-professional p-6 hover-lift group animate-fade-in-up cursor-pointer transition-all duration-500 ${
+              className={`card-professional p-6 hover-lift group animate-fade-in-up cursor-pointer transition-all duration-500 relative overflow-hidden ${
                 activeIdx === idx ? 'ring-2 ring-[#FFCC00] scale-[1.02]' : ''
               }`}
               style={{ animationDelay: `${idx * 0.1}s` }}
               onClick={() => setActiveIdx(activeIdx === idx ? null : idx)}
             >
+              {/* Card-level flag accent */}
+              <div className="absolute top-0 left-0 right-0 h-0.5 flex pointer-events-none">
+                <div className="flex-1 bg-black/20" />
+                <div className="flex-1 bg-[#DD0000]/25" />
+                <div className="flex-1 bg-[#FFCC00]/30" />
+              </div>
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3"
                 style={{ backgroundColor: `${item.color}15` }}
@@ -49,7 +62,6 @@ const WhyGermany = () => {
               </div>
               <h3 className="font-serif text-lg font-bold text-navy mb-2 group-hover:text-[#DD0000] transition-colors">{item.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-              {/* Expand indicator */}
               <div className={`mt-3 h-0.5 bg-gradient-to-r from-[#FFCC00] to-[#DD0000] rounded transition-all duration-500 ${activeIdx === idx ? 'w-full' : 'w-0 group-hover:w-1/2'}`} />
             </div>
           ))}
