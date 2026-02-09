@@ -114,7 +114,7 @@ const HeroCarousel = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
-              <a href="/explore-programs">
+              <a href="/destinations/germany">
                 <Button variant="heroOutline" size="xl">
                   Explore Programs
                 </Button>
