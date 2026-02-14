@@ -115,12 +115,6 @@ const FloatingFlags = () => {
         </svg>
       </button>
 
-      {/* Label shown when flags are collapsed */}
-      {!isExpanded && (
-        <span className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-semibold text-foreground/70 bg-background/90 backdrop-blur-sm px-2 py-0.5 rounded-full shadow-sm border border-border">
-          Explore Destinations
-        </span>
-      )}
 
       {/* Backdrop to close on mobile tap outside */}
       {isExpanded && (
