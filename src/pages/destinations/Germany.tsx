@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import FloatingFlags from '@/components/FloatingFlags';
 import GermanyHero from '@/components/germany/GermanyHero';
 import WhyGermany from '@/components/germany/WhyGermany';
 import GermanyUniversities from '@/components/germany/GermanyUniversities';
@@ -53,6 +54,7 @@ const Germany = () => {
       <GermanyCTA whatsappUrl={whatsappUrl} emailUrl={emailUrl} />
       <Footer />
       <WhatsAppButton />
+      <FloatingFlags />
     </div>
   );
 };
