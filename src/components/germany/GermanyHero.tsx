@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import heroGermany1 from '@/assets/germany-hero-1.jpg';
 import heroGermany2 from '@/assets/germany-hero-2.jpg';
 import heroGermany3 from '@/assets/germany-hero-3.jpg';
@@ -134,14 +134,6 @@ const GermanyHero = ({ whatsappUrl, emailUrl }: GermanyHeroProps) => {
           </div>
         </div>
       </div>
-
-      {/* Navigation - hidden on mobile */}
-      <button onClick={prevSlide} className="hidden md:block absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-[#FFCC00] hover:text-black hover:border-[#FFCC00] transition-all duration-300" aria-label="Previous slide">
-        <ChevronLeft className="h-6 w-6" />
-      </button>
-      <button onClick={nextSlide} className="hidden md:block absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-[#FFCC00] hover:text-black hover:border-[#FFCC00] transition-all duration-300" aria-label="Next slide">
-        <ChevronRight className="h-6 w-6" />
-      </button>
 
       {/* Slide Indicators */}
       <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 flex gap-3">
