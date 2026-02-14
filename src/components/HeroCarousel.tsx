@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import heroImmigration from '@/assets/hero-immigration.jpg';
 import heroStudyAbroad from '@/assets/hero-study-abroad.jpg';
 import heroGermanUniversity from '@/assets/hero-german-university.jpg';
@@ -36,6 +37,7 @@ const slides = [
 ];
 
 const HeroCarousel = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -114,31 +116,13 @@ const HeroCarousel = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
-              <a href="/destinations/germany">
-                <Button variant="heroOutline" size="xl">
-                  Explore Programs
-                </Button>
-              </a>
+              <Button variant="heroOutline" size="xl" onClick={() => navigate('/destinations/germany')}>
+                Explore Programs
+              </Button>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="hidden md:block absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 text-primary-foreground hover:bg-gold hover:text-navy-dark hover:border-gold transition-all duration-300"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="h-6 w-6" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="hidden md:block absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 text-primary-foreground hover:bg-gold hover:text-navy-dark hover:border-gold transition-all duration-300"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="h-6 w-6" />
-      </button>
 
       {/* Slide Indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
