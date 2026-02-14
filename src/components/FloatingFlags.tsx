@@ -28,13 +28,21 @@ const FloatingFlags = () => {
     clearAutoClose();
   };
 
-  // Desktop: close when mouse leaves the container
+  // Desktop: delay close by 2s so user can reach other flags
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const handleMouseLeave = () => {
-    setIsExpanded(false);
+    closeTimer.current = setTimeout(() => {
+      setIsExpanded(false);
+    }, 2000);
   };
 
-  // Desktop: open on hover
+  // Desktop: open on hover, cancel pending close
   const handleMouseEnter = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
     setIsExpanded(true);
   };
 
