@@ -1,17 +1,64 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const FloatingFlags = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const navigate = useNavigate();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const autoCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearAutoClose = useCallback(() => {
+    if (autoCloseTimer.current) {
+      clearTimeout(autoCloseTimer.current);
+      autoCloseTimer.current = null;
+    }
+  }, []);
+
+  // Auto-close after 5 seconds on mobile (touch devices)
+  const startAutoClose = useCallback(() => {
+    clearAutoClose();
+    autoCloseTimer.current = setTimeout(() => {
+      setIsExpanded(false);
+    }, 5000);
+  }, [clearAutoClose]);
 
   const goTo = (path: string) => {
     navigate(path);
     setIsExpanded(false);
+    clearAutoClose();
   };
 
+  // Desktop: close when mouse leaves the container
+  const handleMouseLeave = () => {
+    setIsExpanded(false);
+  };
+
+  // Desktop: open on hover
+  const handleMouseEnter = () => {
+    setIsExpanded(true);
+  };
+
+  // Mobile: tap to toggle, auto-close after 5s
+  const handleTap = () => {
+    if (isExpanded) {
+      goTo('/destinations/germany');
+    } else {
+      setIsExpanded(true);
+      startAutoClose();
+    }
+  };
+
+  useEffect(() => {
+    return () => clearAutoClose();
+  }, [clearAutoClose]);
+
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div
+      ref={containerRef}
+      className="fixed bottom-6 left-6 z-50"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       {/* Canada flag - top left */}
       <button
         onClick={() => goTo('/destinations/canada')}
@@ -39,7 +86,6 @@ const FloatingFlags = () => {
       >
         <svg viewBox="0 0 100 100" className="w-full h-full">
           <rect width="100" height="100" fill="#00008B" />
-          {/* Union Jack hint */}
           <rect x="0" y="0" width="40" height="30" fill="#00008B" />
           <line x1="0" y1="0" x2="40" y2="30" stroke="white" strokeWidth="4" />
           <line x1="40" y1="0" x2="0" y2="30" stroke="white" strokeWidth="4" />
@@ -47,7 +93,6 @@ const FloatingFlags = () => {
           <line x1="0" y1="15" x2="40" y2="15" stroke="white" strokeWidth="5" />
           <line x1="20" y1="0" x2="20" y2="30" stroke="#FF0000" strokeWidth="3" />
           <line x1="0" y1="15" x2="40" y2="15" stroke="#FF0000" strokeWidth="3" />
-          {/* Stars */}
           <circle cx="20" cy="70" r="5" fill="white" />
           <circle cx="70" cy="30" r="3" fill="white" />
           <circle cx="80" cy="55" r="3" fill="white" />
@@ -57,10 +102,9 @@ const FloatingFlags = () => {
         </svg>
       </button>
 
-      {/* Germany main flag button */}
+      {/* Germany main flag button - largest, center of triangle */}
       <button
-        onClick={() => isExpanded ? goTo('/destinations/germany') : setIsExpanded(true)}
-        onMouseEnter={() => setIsExpanded(true)}
+        onClick={handleTap}
         aria-label="Explore Germany"
         className="relative w-14 h-14 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 overflow-hidden border-2 border-white animate-fade-in"
       >
@@ -69,18 +113,20 @@ const FloatingFlags = () => {
           <rect x="0" y="33.33" width="100" height="33.33" fill="#DD0000" />
           <rect x="0" y="66.66" width="100" height="33.34" fill="#FFCC00" />
         </svg>
-        {!isExpanded && (
-          <span className="absolute inset-0 flex items-center justify-center text-white text-[10px] font-bold drop-shadow-md">
-            🌍
-          </span>
-        )}
       </button>
 
-      {/* Backdrop to close */}
+      {/* Label shown when flags are collapsed */}
+      {!isExpanded && (
+        <span className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-semibold text-foreground/70 bg-background/90 backdrop-blur-sm px-2 py-0.5 rounded-full shadow-sm border border-border">
+          Explore Destinations
+        </span>
+      )}
+
+      {/* Backdrop to close on mobile tap outside */}
       {isExpanded && (
         <div
-          className="fixed inset-0 z-[-1]"
-          onClick={() => setIsExpanded(false)}
+          className="fixed inset-0 z-[-1] lg:hidden"
+          onClick={() => { setIsExpanded(false); clearAutoClose(); }}
         />
       )}
     </div>
