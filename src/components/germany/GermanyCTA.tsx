@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 
 interface GermanyCTAProps {
   whatsappUrl: string;
@@ -39,15 +38,13 @@ const GermanyCTA = ({ whatsappUrl, emailUrl }: GermanyCTAProps) => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href={emailUrl}>
-                  <Button variant="gold" size="xl" className="group">
+                  <Button variant="gold" size="xl">
                     Send Inquiry Email
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </a>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-[#25D366] text-white font-semibold hover:bg-[#20bd5a] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all h-14 rounded-lg px-10 text-base group">
+                  <Button className="bg-[#25D366] text-white font-semibold hover:bg-[#20bd5a] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all h-14 rounded-full px-10 text-base">
                     Chat on WhatsApp
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </a>
               </div>

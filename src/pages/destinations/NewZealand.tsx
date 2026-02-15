@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
-import { MapPin, GraduationCap, Briefcase, Mountain, Heart, ArrowRight } from 'lucide-react';
+import { MapPin, GraduationCap, Briefcase, Mountain, Heart } from 'lucide-react';
 
 const NewZealand = () => {
   const highlights = [
@@ -67,7 +67,6 @@ const NewZealand = () => {
               <a href={emailUrl}>
                 <Button variant="gold" size="lg">
                   Explore NZ Opportunities
-                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
             </div>

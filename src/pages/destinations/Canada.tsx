@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
-import { MapPin, GraduationCap, Briefcase, Users, Heart, ArrowRight } from 'lucide-react';
+import { MapPin, GraduationCap, Briefcase, Users, Heart } from 'lucide-react';
 
 const Canada = () => {
   const highlights = [
@@ -68,7 +68,6 @@ const Canada = () => {
               <a href={emailUrl}>
                 <Button variant="gold" size="lg">
                   Check Your Eligibility
-                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
             </div>

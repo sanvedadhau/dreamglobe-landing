@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
-import { GraduationCap, CheckCircle, ArrowRight } from 'lucide-react';
+import { GraduationCap, CheckCircle } from 'lucide-react';
 
 const StudentVisa = () => {
   const features = [
@@ -57,7 +57,6 @@ const StudentVisa = () => {
               <a href={emailUrl}>
                 <Button variant="gold" size="lg">
                   Book Free Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
             </div>
