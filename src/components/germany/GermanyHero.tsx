@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 import heroGermany1 from '@/assets/germany-hero-1.jpg';
 import heroGermany2 from '@/assets/germany-hero-2.jpg';
 import heroGermany3 from '@/assets/germany-hero-3.jpg';
@@ -120,13 +119,12 @@ const GermanyHero = ({ whatsappUrl, emailUrl }: GermanyHeroProps) => {
 
             <div className="flex flex-wrap gap-4">
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <Button className="bg-[#FFCC00] text-black font-bold hover:bg-[#e6b800] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all h-14 rounded-lg px-10 text-base">
+                <Button className="bg-[#FFCC00] text-black font-bold hover:bg-[#e6b800] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all h-14 rounded-full px-10 text-base">
                   WhatsApp Us
-                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
               <a href={emailUrl}>
-                <Button className="border-2 border-[#FFCC00]/80 text-[#FFCC00] font-semibold text-base hover:bg-[#FFCC00]/10 hover:border-[#FFCC00] backdrop-blur-sm bg-transparent h-14 rounded-lg px-10">
+                <Button className="border-2 border-[#FFCC00]/80 text-[#FFCC00] font-semibold text-base hover:bg-[#FFCC00]/10 hover:border-[#FFCC00] backdrop-blur-sm bg-transparent h-14 rounded-full px-10">
                   Send Inquiry
                 </Button>
               </a>

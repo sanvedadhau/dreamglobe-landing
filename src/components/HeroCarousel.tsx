@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import heroImmigration from '@/assets/hero-immigration.jpg';
 import heroStudyAbroad from '@/assets/hero-study-abroad.jpg';
@@ -115,7 +114,6 @@ const HeroCarousel = () => {
               <a href={consultationEmailUrl}>
                 <Button variant="hero" size="xl">
                   Free Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
               <Button

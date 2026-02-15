@@ -113,7 +113,6 @@ const ServicesSection = () => {
           <Link to="/explore-programs">
             <Button variant="gold" size="lg">
               View All Services
-              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
         </div>

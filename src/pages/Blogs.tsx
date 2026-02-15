@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHeader from '@/components/PageHeader';
 import { Button } from '@/components/ui/button';
-import { Calendar, User, ArrowRight, Clock } from 'lucide-react';
+import { Calendar, User, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const blogs = [
@@ -112,7 +112,6 @@ const Blogs = () => {
           <div className="text-center mt-12">
             <Button variant="outline" size="lg">
               Load More Articles
-              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </div>

@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
-import { Plane, CheckCircle, ArrowRight } from 'lucide-react';
+import { Plane, CheckCircle } from 'lucide-react';
 
 const TouristVisa = () => {
   const features = [
@@ -57,7 +57,6 @@ const TouristVisa = () => {
               <a href={emailUrl}>
                 <Button variant="gold" size="lg">
                   Apply Now
-                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
             </div>

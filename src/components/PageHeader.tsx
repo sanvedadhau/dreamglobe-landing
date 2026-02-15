@@ -1,4 +1,3 @@
-import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface PageHeaderProps {
@@ -13,10 +12,9 @@ const PageHeader = ({ title, subtitle, breadcrumb }: PageHeaderProps) => {
       <div className="container-custom px-4 sm:px-6 lg:px-8">
         <Link 
           to="/" 
-          className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors mb-6"
+          className="inline-flex items-center px-4 py-1.5 rounded-full bg-gold/10 text-gold hover:bg-gold/20 transition-colors mb-6 text-sm font-medium"
         >
-          <ArrowLeft className="h-4 w-4" />
-          <span className="text-sm font-medium">Back to Home</span>
+          Back to Home
         </Link>
         {breadcrumb && (
           <p className="text-gold/80 text-sm font-medium tracking-wider uppercase mb-2">

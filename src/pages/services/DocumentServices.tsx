@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
-import { FileCheck, CheckCircle, ArrowRight, Clock } from 'lucide-react';
+import { FileCheck, CheckCircle, Clock } from 'lucide-react';
 
 const DocumentServices = () => {
   const features = [
@@ -57,7 +57,6 @@ const DocumentServices = () => {
               <a href={emailUrl}>
                 <Button variant="gold" size="lg">
                   Get Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
             </div>

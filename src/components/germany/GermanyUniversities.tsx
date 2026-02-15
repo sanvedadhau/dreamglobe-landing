@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, BookOpen, ExternalLink, ChevronDown, GraduationCap } from 'lucide-react';
+import { MapPin, BookOpen, ChevronDown, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const universities = [
@@ -171,9 +171,8 @@ const GermanyUniversities = ({ whatsappUrl }: GermanyUniversitiesProps) => {
                       <p className="text-muted-foreground text-xs mb-3 leading-relaxed">{uni.description}</p>
                     </div>
                     <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                      <Button size="sm" className="w-full bg-[#FFCC00] text-black hover:bg-[#e6b800] transition-all duration-300 font-semibold shadow-md">
+                      <Button size="sm" className="w-full bg-[#FFCC00] text-black hover:bg-[#e6b800] transition-all duration-300 font-semibold shadow-md rounded-full">
                         Inquire About This University
-                        <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
                       </Button>
                     </a>
                   </div>

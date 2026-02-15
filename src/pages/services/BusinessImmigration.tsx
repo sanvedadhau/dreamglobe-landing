@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
-import { Building, CheckCircle, ArrowRight } from 'lucide-react';
+import { Building, CheckCircle } from 'lucide-react';
 
 const BusinessImmigration = () => {
   const features = [
@@ -57,7 +57,6 @@ const BusinessImmigration = () => {
               <a href={emailUrl}>
                 <Button variant="gold" size="lg">
                   Schedule Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
             </div>
