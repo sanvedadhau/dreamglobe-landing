@@ -6,6 +6,8 @@ import heroImmigration from '@/assets/hero-immigration.jpg';
 import heroStudyAbroad from '@/assets/hero-study-abroad.jpg';
 import heroGermanUniversity from '@/assets/hero-german-university.jpg';
 
+const consultationEmailUrl = `mailto:info@dreamglobe.co.in?cc=manisha@dreamglobe.co.in&subject=${encodeURIComponent('Free Consultation Request - DreamGlobe Immigration')}&body=${encodeURIComponent('Hello DreamGlobe Team,\n\nI would like to book a free consultation regarding immigration/study abroad services. Please get in touch with me at your earliest convenience.\n\nName: \nPhone: \nPreferred Service: \n\nThank you.')}`;
+
 const slides = [
   {
     id: 1,
@@ -14,16 +16,16 @@ const slides = [
     subtitle: 'Expert Visa Services',
     description:
       'Navigate the complex world of immigration with confidence. Our experienced consultants guide you every step of the way.',
-    cta: 'Start Your Journey',
+    secondaryCta: { label: 'Explore Programs', action: 'navigate', target: '/explore-programs' },
   },
   {
     id: 2,
     image: heroStudyAbroad,
-    title: 'Study Abroad Dreams Come True',
+    title: 'Your Study Abroad Dreams Come True',
     subtitle: 'International Education',
     description:
       'Unlock world-class education opportunities at top universities worldwide. Your future begins with the right guidance.',
-    cta: 'Explore Programs',
+    secondaryCta: { label: 'Watch Our Story', action: 'video', target: '#' },
   },
   {
     id: 3,
@@ -32,7 +34,7 @@ const slides = [
     subtitle: 'German Public Universities',
     description:
       'Access tuition-free education at prestigious German public universities. Quality education without the financial burden.',
-    cta: 'Learn More',
+    secondaryCta: { label: 'Study in Germany', action: 'navigate', target: '/destinations/germany' },
   },
 ];
 
@@ -110,14 +112,22 @@ const HeroCarousel = () => {
             </p>
             {/* Buttons stay completely stationary */}
             <div className="flex flex-wrap gap-4">
-              <a href="https://wa.me/919112220244?text=Hello%20DreamGlobe%20Team%2C%0A%0AI%20would%20like%20to%20book%20a%20free%20consultation%20call%20regarding%20immigration%20services.%20Please%20get%20in%20touch%20with%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you." target="_blank" rel="noopener noreferrer">
+              <a href={consultationEmailUrl}>
                 <Button variant="hero" size="xl">
                   Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
-              <Button variant="heroOutline" size="xl" onClick={() => navigate('/destinations/germany')}>
-                Explore Programs
+              <Button
+                variant="heroOutline"
+                size="xl"
+                onClick={() => {
+                  const cta = slides[currentSlide].secondaryCta;
+                  if (cta.action === 'navigate') navigate(cta.target);
+                  // 'video' action placeholder for future embed
+                }}
+              >
+                {slides[currentSlide].secondaryCta.label}
               </Button>
             </div>
           </div>
