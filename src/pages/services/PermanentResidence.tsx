@@ -4,8 +4,10 @@ import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { Users, CheckCircle } from 'lucide-react';
+import { useCanonical } from '@/hooks/useCanonical';
 
 const PermanentResidence = () => {
+  useCanonical();
   const features = [
     'Points-Based Assessment',
     'Express Entry Applications',

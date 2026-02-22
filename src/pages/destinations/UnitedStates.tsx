@@ -4,8 +4,10 @@ import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { MapPin, GraduationCap, Briefcase, Star, Heart } from 'lucide-react';
+import { useCanonical } from '@/hooks/useCanonical';
 
 const UnitedStates = () => {
+  useCanonical();
   const highlights = [
     { icon: GraduationCap, title: 'Top Universities', desc: 'Ivy League and world-class institutions' },
     { icon: Briefcase, title: 'Innovation Hub', desc: 'Silicon Valley and Fortune 500 companies' },

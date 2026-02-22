@@ -4,8 +4,10 @@ import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { MapPin, GraduationCap, Briefcase, Mountain, Heart } from 'lucide-react';
+import { useCanonical } from '@/hooks/useCanonical';
 
 const NewZealand = () => {
+  useCanonical();
   const highlights = [
     { icon: GraduationCap, title: 'Quality Education', desc: 'Globally recognized qualifications' },
     { icon: Briefcase, title: 'Skills Shortage', desc: 'High demand for skilled workers' },

@@ -4,6 +4,7 @@ import PageHeader from '@/components/PageHeader';
 import { Button } from '@/components/ui/button';
 import { Calendar, User, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useCanonical } from '@/hooks/useCanonical';
 
 const blogs = [
   {
@@ -63,6 +64,7 @@ const blogs = [
 ];
 
 const Blogs = () => {
+  useCanonical();
   return (
     <div className="min-h-screen bg-background">
       <Header />

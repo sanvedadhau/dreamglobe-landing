@@ -1,8 +1,10 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageHeader from '@/components/PageHeader';
+import { useCanonical } from '@/hooks/useCanonical';
 
 const PrivacyPolicy = () => {
+  useCanonical();
   return (
     <div className="min-h-screen bg-background">
       <Header />

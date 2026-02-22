@@ -4,8 +4,10 @@ import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { FileCheck, CheckCircle, Clock } from 'lucide-react';
+import { useCanonical } from '@/hooks/useCanonical';
 
 const DocumentServices = () => {
+  useCanonical();
   const features = [
     'Document Attestation',
     'Apostille Services',

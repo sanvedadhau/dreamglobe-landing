@@ -4,8 +4,10 @@ import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { Briefcase, CheckCircle } from 'lucide-react';
+import { useCanonical } from '@/hooks/useCanonical';
 
 const WorkVisa = () => {
+  useCanonical();
   const features = [
     'Job Search Assistance',
     'Work Permit Processing',

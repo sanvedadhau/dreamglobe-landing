@@ -4,8 +4,10 @@ import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { Building, CheckCircle } from 'lucide-react';
+import { useCanonical } from '@/hooks/useCanonical';
 
 const BusinessImmigration = () => {
+  useCanonical();
   const features = [
     'Start-up Visa Programs',
     'Investor Immigration',
