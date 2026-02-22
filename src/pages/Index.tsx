@@ -10,8 +10,10 @@ import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FloatingFlags from '@/components/FloatingFlags';
+import { useCanonical } from '@/hooks/useCanonical';
 
 const Index = () => {
+  useCanonical();
   return (
     <div className="min-h-screen">
       <Header />

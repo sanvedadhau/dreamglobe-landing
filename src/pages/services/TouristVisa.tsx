@@ -4,8 +4,10 @@ import PageHeader from '@/components/PageHeader';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import { Plane, CheckCircle } from 'lucide-react';
+import { useCanonical } from '@/hooks/useCanonical';
 
 const TouristVisa = () => {
+  useCanonical();
   const features = [
     'Quick Processing Time',
     'Complete Document Checklist',

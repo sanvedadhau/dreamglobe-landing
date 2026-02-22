@@ -8,6 +8,7 @@ import GermanyUniversities from '@/components/germany/GermanyUniversities';
 import GermanyProcess from '@/components/germany/GermanyProcess';
 import GermanyEligibility from '@/components/germany/GermanyEligibility';
 import GermanyCTA from '@/components/germany/GermanyCTA';
+import { useCanonical } from '@/hooks/useCanonical';
 
 const whatsappUrl = `https://wa.me/919112220244?text=${encodeURIComponent('Hello DreamGlobe Team,\n\nI would like to know more about Study in Germany programs. Please share the details about tuition-free universities and the application process.\n\nThank you.')}`;
 const emailUrl = `mailto:info@dreamglobe.co.in?subject=${encodeURIComponent('Inquiry - Study in Germany Program')}&body=${encodeURIComponent('Hello DreamGlobe Team,\n\nI am interested in the Study in Germany program. Please share detailed information about:\n- University options\n- Eligibility requirements\n- Application process\n- Visa guidance\n\nThank you.')}`;
@@ -26,6 +27,7 @@ const GermanFlagBg = () => (
 );
 
 const Germany = () => {
+  useCanonical();
   return (
     <div className="min-h-screen bg-background relative">
       {/* Subtle vertical flag stripe on left edge */}
