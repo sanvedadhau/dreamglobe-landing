@@ -27,7 +27,10 @@ const GermanFlagBg = () => (
 );
 
 const Germany = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Study in Germany – Tuition-Free Universities | DreamGlobe',
+    description: 'Study in Germany at tuition-free public universities. Expert guidance on admission, blocked account, visa & accommodation by DreamGlobe.',
+  });
   return (
     <div className="min-h-screen bg-background relative">
       {/* Subtle vertical flag stripe on left edge */}

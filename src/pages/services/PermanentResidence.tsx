@@ -7,7 +7,10 @@ import { Users, CheckCircle } from 'lucide-react';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const PermanentResidence = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Permanent Residence (PR) Visa Services | DreamGlobe Immigration',
+    description: 'Get PR visa assistance for Canada, Australia & New Zealand. Express Entry, PNP, skilled migration & family sponsorship guidance by DreamGlobe.',
+  });
   const features = [
     'Points-Based Assessment',
     'Express Entry Applications',

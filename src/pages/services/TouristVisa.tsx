@@ -7,7 +7,10 @@ import { Plane, CheckCircle } from 'lucide-react';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const TouristVisa = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Tourist Visa Services – Travel Visa Assistance | DreamGlobe',
+    description: 'Hassle-free tourist visa applications for Europe, USA, Canada, Australia & more. Document checklist, interview prep & travel planning by DreamGlobe.',
+  });
   const features = [
     'Quick Processing Time',
     'Complete Document Checklist',

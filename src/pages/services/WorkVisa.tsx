@@ -7,7 +7,10 @@ import { Briefcase, CheckCircle } from 'lucide-react';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const WorkVisa = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Work Visa Services – Work Abroad Opportunities | DreamGlobe',
+    description: 'Apply for work visas to Canada, Australia, UK, Germany & USA. Job search assistance, employer sponsorship & skills assessment by DreamGlobe Immigration.',
+  });
   const features = [
     'Job Search Assistance',
     'Work Permit Processing',

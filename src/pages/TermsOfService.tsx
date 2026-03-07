@@ -4,7 +4,10 @@ import PageHeader from '@/components/PageHeader';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const TermsOfService = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Terms of Service | DreamGlobe Immigration',
+    description: 'Read the terms of service for DreamGlobe Immigration consultancy services.',
+  });
   return (
     <div className="min-h-screen bg-background">
       <Header />

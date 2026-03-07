@@ -4,7 +4,10 @@ import PageHeader from '@/components/PageHeader';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const PrivacyPolicy = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Privacy Policy | DreamGlobe Immigration',
+    description: 'Read DreamGlobe Immigration privacy policy. Learn how we collect, use and protect your personal information.',
+  });
   return (
     <div className="min-h-screen bg-background">
       <Header />

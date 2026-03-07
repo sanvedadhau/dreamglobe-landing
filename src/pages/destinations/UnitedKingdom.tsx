@@ -7,7 +7,10 @@ import { MapPin, GraduationCap, Briefcase, Crown, Heart } from 'lucide-react';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const UnitedKingdom = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Immigrate to UK – Study, Work & Skilled Worker Visa | DreamGlobe',
+    description: 'UK immigration services including student visas, skilled worker visas, Graduate Route & family visas. Expert UK consultancy by DreamGlobe.',
+  });
   const highlights = [
     { icon: GraduationCap, title: 'Prestigious Education', desc: 'Oxford, Cambridge, and more' },
     { icon: Briefcase, title: 'Global Hub', desc: 'International business center' },

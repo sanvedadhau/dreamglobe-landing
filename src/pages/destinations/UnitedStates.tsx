@@ -7,7 +7,10 @@ import { MapPin, GraduationCap, Briefcase, Star, Heart } from 'lucide-react';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const UnitedStates = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Immigrate to USA – Study, Work & H1B Visa | DreamGlobe',
+    description: 'USA immigration services including F1 student visas, H1B work visas, EB-5 investor visas & Green Card pathways. Expert consultancy by DreamGlobe.',
+  });
   const highlights = [
     { icon: GraduationCap, title: 'Top Universities', desc: 'Ivy League and world-class institutions' },
     { icon: Briefcase, title: 'Innovation Hub', desc: 'Silicon Valley and Fortune 500 companies' },

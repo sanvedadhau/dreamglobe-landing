@@ -7,7 +7,10 @@ import { Building, CheckCircle } from 'lucide-react';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const BusinessImmigration = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Business Immigration – Investor & Entrepreneur Visa | DreamGlobe',
+    description: 'Start-up visas, investor immigration & business setup abroad. Expert business immigration consultancy by DreamGlobe Immigration.',
+  });
   const features = [
     'Start-up Visa Programs',
     'Investor Immigration',
