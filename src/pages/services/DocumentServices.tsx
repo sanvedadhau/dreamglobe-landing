@@ -7,7 +7,10 @@ import { FileCheck, CheckCircle, Clock } from 'lucide-react';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const DocumentServices = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Document Services – Apostille, Attestation & Translation | DreamGlobe',
+    description: 'Document attestation, apostille, certified translation, PCC & embassy legalization services for immigration by DreamGlobe.',
+  });
   const features = [
     'Document Attestation',
     'Apostille Services',

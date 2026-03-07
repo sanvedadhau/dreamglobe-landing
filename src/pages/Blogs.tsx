@@ -64,7 +64,10 @@ const blogs = [
 ];
 
 const Blogs = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Immigration Blog – Visa Tips & Guides | DreamGlobe',
+    description: 'Read expert immigration blogs, visa tips, country guides & latest updates on study abroad, work visas and PR by DreamGlobe Immigration.',
+  });
   return (
     <div className="min-h-screen bg-background">
       <Header />

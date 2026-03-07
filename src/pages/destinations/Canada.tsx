@@ -7,7 +7,10 @@ import { MapPin, GraduationCap, Briefcase, Users, Heart } from 'lucide-react';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const Canada = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Immigrate to Canada – Study, Work & PR Visa | DreamGlobe',
+    description: 'Canada immigration made easy. Express Entry, study permits, work visas & family sponsorship. Expert Canada visa consultancy by DreamGlobe.',
+  });
   const highlights = [
     { icon: GraduationCap, title: 'World-Class Education', desc: 'Top universities and post-graduate work permits' },
     { icon: Briefcase, title: 'Strong Economy', desc: 'Diverse job market with high wages' },

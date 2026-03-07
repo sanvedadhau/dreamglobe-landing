@@ -13,7 +13,10 @@ import FloatingFlags from '@/components/FloatingFlags';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const Index = () => {
-  useCanonical();
+  useCanonical({
+    title: 'DreamGlobe Immigration – Expert Visa & Immigration Consultancy',
+    description: 'DreamGlobe Immigration is your trusted partner for study abroad, work visas, PR, tourist visas, and business immigration. Free consultation available.',
+  });
   return (
     <div className="min-h-screen">
       <Header />

@@ -62,7 +62,10 @@ const programs = [
 const emailUrl = "mailto:info@dreamglobe.co.in?subject=Free%20Consultation%20Request&body=Hello%20DreamGlobe%20Team%2C%0A%0AI%20would%20like%20to%20book%20a%20free%20consultation%20to%20discuss%20the%20best%20immigration%20pathway%20for%20me.%0A%0AThank%20you.";
 
 const ExplorePrograms = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Explore Immigration Programs – Visa Options | DreamGlobe',
+    description: 'Browse all visa and immigration programs: student visas, work permits, PR, tourist visas, business immigration & document services by DreamGlobe.',
+  });
   return (
     <div className="min-h-screen bg-background">
       <Header />

@@ -7,7 +7,10 @@ import { GraduationCap, CheckCircle } from 'lucide-react';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const StudentVisa = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Student Visa Services – Study Abroad Consultancy | DreamGlobe',
+    description: 'Get expert student visa guidance for Canada, Australia, UK, Germany & more. University selection, SOP help, visa filing & interview prep by DreamGlobe.',
+  });
   const features = [
     'University Selection & Counseling',
     'Application Processing',

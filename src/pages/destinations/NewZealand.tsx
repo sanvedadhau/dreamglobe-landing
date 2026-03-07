@@ -7,7 +7,10 @@ import { MapPin, GraduationCap, Briefcase, Mountain, Heart } from 'lucide-react'
 import { useCanonical } from '@/hooks/useCanonical';
 
 const NewZealand = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Immigrate to New Zealand – Study, Work & PR Visa | DreamGlobe',
+    description: 'New Zealand immigration services including skilled migrant visas, student visas, work visas & PR pathways. Consult DreamGlobe today.',
+  });
   const highlights = [
     { icon: GraduationCap, title: 'Quality Education', desc: 'Globally recognized qualifications' },
     { icon: Briefcase, title: 'Skills Shortage', desc: 'High demand for skilled workers' },

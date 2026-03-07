@@ -7,7 +7,10 @@ import { MapPin, GraduationCap, Briefcase, Sun, Heart } from 'lucide-react';
 import { useCanonical } from '@/hooks/useCanonical';
 
 const Australia = () => {
-  useCanonical();
+  useCanonical({
+    title: 'Immigrate to Australia – Study, Work & PR Visa | DreamGlobe',
+    description: 'Australia immigration services including skilled migration, student visas, employer sponsorship & PR pathways. Consult DreamGlobe today.',
+  });
   const highlights = [
     { icon: GraduationCap, title: 'Premier Education', desc: '7 universities in global top 100' },
     { icon: Briefcase, title: 'Skilled Migration', desc: 'Point-based immigration system' },
